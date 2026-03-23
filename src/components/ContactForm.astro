@@ -1,0 +1,214 @@
+---
+---
+
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready for a network that works?</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        A free 30-minute consultation to talk through your home, what's not working, and what a proper setup would look like. No commitment required.
+      </p>
+    </div>
+
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+      <input type="hidden" name="subject" value="New consultation request from propernet.ca" />
+      <input type="checkbox" name="botcheck" class="hidden" />
+
+      <!-- Name & Email -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm text-gray-400 mb-1">Name <span class="text-accent">*</span></label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            placeholder="Your name"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm text-gray-400 mb-1">Email <span class="text-accent">*</span></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            placeholder="you@example.com"
+          />
+        </div>
+      </div>
+
+      <!-- Phone & Home Type -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="phone" class="block text-sm text-gray-400 mb-1">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            placeholder="(780) 555-0000"
+          />
+        </div>
+        <div>
+          <label for="home_type" class="block text-sm text-gray-400 mb-1">Home type <span class="text-accent">*</span></label>
+          <select
+            name="home_type"
+            id="home_type"
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          >
+            <option value="" disabled selected class="bg-[#0a0a0a]">Select...</option>
+            <option value="House" class="bg-[#0a0a0a]">House</option>
+            <option value="Townhouse" class="bg-[#0a0a0a]">Townhouse</option>
+            <option value="Condo" class="bg-[#0a0a0a]">Condo</option>
+            <option value="Acreage / Rural" class="bg-[#0a0a0a]">Acreage / Rural</option>
+            <option value="Small Business" class="bg-[#0a0a0a]">Small Business</option>
+            <option value="Other" class="bg-[#0a0a0a]">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Sq Ft & Floors -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="sqft" class="block text-sm text-gray-400 mb-1">Approximate sq ft</label>
+          <select
+            name="sqft"
+            id="sqft"
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          >
+            <option value="" disabled selected class="bg-[#0a0a0a]">Select...</option>
+            <option value="Under 1,500" class="bg-[#0a0a0a]">Under 1,500</option>
+            <option value="1,500 – 2,500" class="bg-[#0a0a0a]">1,500 – 2,500</option>
+            <option value="2,500 – 4,000" class="bg-[#0a0a0a]">2,500 – 4,000</option>
+            <option value="4,000+" class="bg-[#0a0a0a]">4,000+</option>
+            <option value="Not sure" class="bg-[#0a0a0a]">Not sure</option>
+          </select>
+        </div>
+        <div>
+          <label for="floors" class="block text-sm text-gray-400 mb-1">Number of floors</label>
+          <select
+            name="floors"
+            id="floors"
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          >
+            <option value="" disabled selected class="bg-[#0a0a0a]">Select...</option>
+            <option value="1" class="bg-[#0a0a0a]">1</option>
+            <option value="2" class="bg-[#0a0a0a]">2</option>
+            <option value="3+" class="bg-[#0a0a0a]">3+</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Services of Interest -->
+      <div>
+        <span class="block text-sm text-gray-400 mb-3">Services of interest</span>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {[
+            'Structured Cabling',
+            'Wi-Fi Coverage',
+            'Network Segmentation',
+            'Camera System',
+            'Full Network Build',
+            'Not Sure',
+          ].map(service => (
+            <label class="flex items-center gap-2 text-sm text-gray-300 cursor-pointer">
+              <input type="checkbox" name="services" value={service} class="accent-accent rounded" />
+              {service}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <!-- What's not working -->
+      <div>
+        <label for="message" class="block text-sm text-gray-400 mb-1">What's not working? <span class="text-accent">*</span></label>
+        <textarea
+          name="message"
+          id="message"
+          required
+          rows="4"
+          class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent resize-y"
+          placeholder="Describe your current network issues or what you'd like improved..."
+        ></textarea>
+      </div>
+
+      <!-- Preferred Contact -->
+      <div>
+        <span class="block text-sm text-gray-400 mb-3">Preferred contact method</span>
+        <div class="flex gap-6">
+          {['Email', 'Phone', 'Either'].map(method => (
+            <label class="flex items-center gap-2 text-sm text-gray-300 cursor-pointer">
+              <input type="radio" name="preferred_contact" value={method} class="accent-accent" />
+              {method}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="pt-2">
+        <button
+          type="submit"
+          class="w-full md:w-auto bg-accent text-black font-semibold px-8 py-4 rounded-lg text-lg hover:bg-accent/90 transition-colors cursor-pointer"
+        >
+          Request a Free Consultation
+        </button>
+      </div>
+    </form>
+
+    <!-- Success message (hidden by default) -->
+    <div id="form-success" class="hidden text-center py-12">
+      <div class="text-accent text-5xl mb-4">✓</div>
+      <h3 class="text-2xl font-bold text-white mb-2">Request received</h3>
+      <p class="text-gray-400">Thanks for reaching out. I'll get back to you within one business day.</p>
+    </div>
+
+    <!-- Error message (hidden by default) -->
+    <div id="form-error" class="hidden text-center py-8">
+      <p class="text-red-400">Something went wrong. Please try again or email directly.</p>
+    </div>
+
+    <p class="text-center text-gray-500 text-sm mt-8">
+      Or email directly at
+      <a href="mailto:hello@propernet.ca" class="text-accent hover:underline">hello@propernet.ca</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success')!;
+  const error = document.getElementById('form-error')!;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+      });
+
+      if (res.ok) {
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+      } else {
+        error.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Request a Free Consultation';
+      }
+    } catch {
+      error.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = 'Request a Free Consultation';
+    }
+  });
+</script>
