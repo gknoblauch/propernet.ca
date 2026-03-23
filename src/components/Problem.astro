@@ -1,0 +1,31 @@
+---
+const problems = [
+  {
+    title: 'One router doing too much',
+    description: 'The device your ISP installed wasn\'t designed for 30+ connected devices, dead zones, or the demands of a modern home. It just came with your internet plan.',
+  },
+  {
+    title: 'Everything on the same network',
+    description: 'Your phone, your cameras, your kids\' tablets — all on one flat network, all able to reach each other. That\'s not a security setup, it\'s a liability.',
+  },
+  {
+    title: 'Hardware that works for your ISP, not you',
+    description: 'Consumer routers report usage data, depend on manufacturer clouds, and rarely receive meaningful security updates. You pay for the internet; someone else benefits from your data.',
+  },
+];
+---
+
+<section id="problem" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">The Problem</h2>
+    <p class="text-gray-400 text-center mb-16 max-w-xl mx-auto">Most home networks weren't designed — they were defaulted.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      {problems.map(p => (
+        <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-white mb-3">{p.title}</h3>
+          <p class="text-gray-400 leading-relaxed">{p.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
