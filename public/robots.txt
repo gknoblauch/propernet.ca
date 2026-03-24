@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://propernet.ca/sitemap-index.xml

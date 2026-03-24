@@ -11,6 +11,8 @@ const links = [
 <header class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="#" class="text-xl font-bold text-white">propernet<span class="text-accent">.ca</span></a>
+
+    <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
       {links.map(link => (
         <a href={link.href} class="text-sm text-gray-400 hover:text-white transition-colors">{link.label}</a>
@@ -19,5 +21,51 @@ const links = [
         Book a Consultation
       </a>
     </div>
+
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+      <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      {links.map(link => (
+        <a href={link.href} class="mobile-nav-link text-sm text-gray-400 hover:text-white transition-colors py-1">{link.label}</a>
+      ))}
+      <a href="#contact" class="mobile-nav-link text-sm font-medium bg-accent text-black px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors text-center mt-2">
+        Book a Consultation
+      </a>
+    </div>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const iconOpen = document.getElementById('menu-icon-open')!;
+  const iconClose = document.getElementById('menu-icon-close')!;
+
+  btn.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

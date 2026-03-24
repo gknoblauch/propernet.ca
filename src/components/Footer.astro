@@ -3,7 +3,13 @@
 
 <footer class="border-t border-white/[0.06] py-8 px-6">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <span class="text-gray-500 text-sm">Based in Edmonton, AB. Serving the greater Edmonton area.</span>
-    <span class="text-gray-600 text-sm">&copy; {new Date().getFullYear()} propernet.ca</span>
+    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+      <span class="text-gray-500 text-sm">Based in Edmonton, AB. Serving the greater Edmonton area.</span>
+      <a href="mailto:hello@propernet.ca" class="text-accent text-sm hover:underline">hello@propernet.ca</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="/privacy" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy Policy</a>
+      <span class="text-gray-600 text-sm">&copy; {new Date().getFullYear()} propernet.ca</span>
+    </div>
   </div>
 </footer>

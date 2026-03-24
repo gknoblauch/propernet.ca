@@ -1,0 +1,42 @@
+---
+const steps = [
+  {
+    num: '1',
+    title: 'Free Consultation',
+    description: 'A 30-minute call to understand your home, your frustrations, and what you need from your network.',
+  },
+  {
+    num: '2',
+    title: 'Site Assessment',
+    description: 'An on-site walkthrough to plan cable routes, access point placement, and equipment locations.',
+  },
+  {
+    num: '3',
+    title: 'Installation',
+    description: 'Professional installation of cabling, hardware, and configuration — clean, tested, and documented.',
+  },
+  {
+    num: '4',
+    title: 'Ongoing Support',
+    description: 'Optional monitoring, firmware updates, and configuration changes as your home evolves.',
+  },
+];
+---
+
+<section id="process" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">How It Works</h2>
+    <p class="text-gray-400 text-center mb-16 max-w-xl mx-auto">From first call to finished network — here's what to expect.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map(s => (
+        <div class="relative">
+          <span class="text-accent text-5xl font-bold opacity-20 absolute -top-2 -left-1">{s.num}</span>
+          <div class="pt-10">
+            <h3 class="text-lg font-semibold text-white mb-2">{s.title}</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">{s.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

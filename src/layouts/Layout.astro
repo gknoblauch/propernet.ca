@@ -5,6 +5,32 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "propernet.ca",
+  "description": "Professional-grade network infrastructure for homes and small businesses in Edmonton.",
+  "url": "https://propernet.ca",
+  "email": "hello@propernet.ca",
+  "areaServed": {
+    "@type": "City",
+    "name": "Edmonton",
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": "Alberta"
+    }
+  },
+  "serviceType": [
+    "Home Network Installation",
+    "Structured Cabling",
+    "Wi-Fi Access Point Installation",
+    "Network Segmentation",
+    "Security Camera Installation",
+    "Firewall Configuration"
+  ],
+  "priceRange": "$$"
+};
 ---
 
 <!doctype html>
@@ -18,12 +44,15 @@ const { title, description } = Astro.props;
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://propernet.ca" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://propernet.ca" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <title>{title}</title>
   </head>
   <body class="bg-[#0a0a0a] text-gray-200 font-sans antialiased">
     <slot />
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>

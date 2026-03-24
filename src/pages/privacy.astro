@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Privacy Policy — propernet.ca"
+  description="Privacy policy for propernet.ca — how we handle your personal information."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6">
+    <div class="max-w-3xl mx-auto prose prose-invert">
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-8">Privacy Policy</h1>
+      <p class="text-gray-400 text-sm mb-8">Last updated: March 2026</p>
+
+      <h2 class="text-xl font-semibold text-white mt-10 mb-4">Information We Collect</h2>
+      <p class="text-gray-400 leading-relaxed mb-4">
+        When you submit our consultation form, we collect the information you provide — including your name, email address, phone number, and details about your home and network needs. This information is sent to us via Web3Forms and delivered to our email.
+      </p>
+
+      <h2 class="text-xl font-semibold text-white mt-10 mb-4">How We Use Your Information</h2>
+      <p class="text-gray-400 leading-relaxed mb-4">
+        We use your information solely to respond to your consultation request, provide quotes, and deliver our services. We do not sell, share, or rent your personal information to third parties.
+      </p>
+
+      <h2 class="text-xl font-semibold text-white mt-10 mb-4">Third-Party Services</h2>
+      <p class="text-gray-400 leading-relaxed mb-4">
+        Our contact form uses <a href="https://web3forms.com" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Web3Forms</a> to process submissions. Your form data is transmitted through their service and delivered to our email. We encourage you to review their privacy policy.
+      </p>
+
+      <h2 class="text-xl font-semibold text-white mt-10 mb-4">Data Retention</h2>
+      <p class="text-gray-400 leading-relaxed mb-4">
+        We retain your contact information only as long as necessary to fulfill your request and provide our services. You can request deletion of your data at any time by emailing us.
+      </p>
+
+      <h2 class="text-xl font-semibold text-white mt-10 mb-4">Contact</h2>
+      <p class="text-gray-400 leading-relaxed mb-4">
+        If you have questions about this privacy policy, contact us at
+        <a href="mailto:hello@propernet.ca" class="text-accent hover:underline">hello@propernet.ca</a>.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>

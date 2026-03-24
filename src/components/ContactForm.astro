@@ -11,7 +11,7 @@
     </div>
 
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+      <input type="hidden" name="access_key" value="ccac6875-755f-4490-8391-11436e4638a4" />
       <input type="hidden" name="subject" value="New consultation request from propernet.ca" />
       <input type="checkbox" name="botcheck" class="hidden" />
 
@@ -150,6 +150,9 @@
         </div>
       </div>
 
+      <!-- hCaptcha -->
+      <div class="h-captcha" data-captcha="true"></div>
+
       <!-- Submit -->
       <div class="pt-2">
         <button
@@ -187,6 +190,12 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]') as HTMLTextAreaElement | null;
+    if (hCaptcha && !hCaptcha.value) {
+      alert('Please complete the captcha.');
+      return;
+    }
+
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     btn.disabled = true;
     btn.textContent = 'Sending...';

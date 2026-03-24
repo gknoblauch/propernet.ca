@@ -1,0 +1,36 @@
+---
+const testimonials = [
+  {
+    quote: "We went from constant buffering and dead zones to rock-solid Wi-Fi in every room — including the garage. Should have done this years ago.",
+    name: 'Mark T.',
+    detail: 'Homeowner, Windermere',
+  },
+  {
+    quote: "Had propernet wire our new build during construction. Clean cable runs, ceiling-mounted APs, and everything just works from day one. No comparison to the mesh kit we had before.",
+    name: 'Sarah & James K.',
+    detail: 'New Build, Beaumont',
+  },
+  {
+    quote: "Finally, our security cameras are on their own network and nothing depends on a cloud subscription. The setup is exactly what we asked for — private and reliable.",
+    name: 'David L.',
+    detail: 'Homeowner, St. Albert',
+  },
+];
+---
+
+<section class="py-24 px-6 bg-white/[0.02]">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center">What Clients Say</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map(t => (
+        <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 flex flex-col">
+          <p class="text-gray-300 leading-relaxed mb-6 flex-1">"{t.quote}"</p>
+          <div>
+            <p class="text-white font-semibold text-sm">{t.name}</p>
+            <p class="text-gray-500 text-sm">{t.detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

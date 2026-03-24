@@ -1,0 +1,47 @@
+---
+const faqs = [
+  {
+    q: 'Do you work with existing homes, or only new builds?',
+    a: 'Both. New builds are ideal for running cables during construction, but most of my work is retrofitting existing homes with minimal disruption.',
+  },
+  {
+    q: 'How long does a typical installation take?',
+    a: 'Most residential installs take 1–2 days depending on the scope. A simple Wi-Fi upgrade might be a few hours; a full structured cabling job in a larger home could take longer.',
+  },
+  {
+    q: 'What brands and equipment do you use?',
+    a: 'I work with professional-grade equipment from brands like UniFi, TP-Link Omada, MikroTik, and others — chosen based on your needs and budget, not vendor lock-in.',
+  },
+  {
+    q: 'How much does it cost?',
+    a: 'Every home is different. A consultation is free, and I\'ll provide a detailed quote based on your specific setup. Most projects range from a few hundred to a few thousand dollars depending on scope.',
+  },
+  {
+    q: 'Do you offer warranties or ongoing support?',
+    a: 'All hardware comes with manufacturer warranties. I also offer optional ongoing support for remote monitoring, firmware updates, and configuration changes.',
+  },
+  {
+    q: 'Will this work with my current internet provider?',
+    a: 'Yes. The network infrastructure I install works with any ISP. You keep your internet plan — I replace the hardware that manages it inside your home.',
+  },
+];
+---
+
+<section id="faq" class="py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center">Frequently Asked Questions</h2>
+    <div class="space-y-6">
+      {faqs.map(faq => (
+        <details class="group bg-white/[0.03] border border-white/[0.06] rounded-2xl">
+          <summary class="flex items-center justify-between cursor-pointer px-8 py-6 text-white font-medium list-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 shrink-0 ml-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+          </summary>
+          <div class="px-8 pb-6 text-gray-400 leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
