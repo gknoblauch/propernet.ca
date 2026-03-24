@@ -134,8 +134,7 @@
       });
 
       if (res.ok) {
-        form.classList.add('hidden');
-        success.classList.remove('hidden');
+        window.location.href = '/thank-you';
       } else {
         error.classList.remove('hidden');
         btn.disabled = false;
