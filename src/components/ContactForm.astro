@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <!-- Phone & Home Type -->
+      <!-- Phone & Property Type -->
       <div class="grid md:grid-cols-2 gap-6">
         <div>
           <label for="phone" class="block text-sm text-gray-400 mb-1">Phone</label>
@@ -54,7 +54,7 @@
           />
         </div>
         <div>
-          <label for="home_type" class="block text-sm text-gray-400 mb-1">Home type <span class="text-accent">*</span></label>
+          <label for="home_type" class="block text-sm text-gray-400 mb-1">Property type <span class="text-accent">*</span></label>
           <select
             name="home_type"
             id="home_type"
@@ -72,86 +72,18 @@
         </div>
       </div>
 
-      <!-- Sq Ft & Floors -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <label for="sqft" class="block text-sm text-gray-400 mb-1">Approximate sq ft</label>
-          <select
-            name="sqft"
-            id="sqft"
-            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          >
-            <option value="" disabled selected class="bg-[#0a0a0a]">Select...</option>
-            <option value="Under 1,500" class="bg-[#0a0a0a]">Under 1,500</option>
-            <option value="1,500 – 2,500" class="bg-[#0a0a0a]">1,500 – 2,500</option>
-            <option value="2,500 – 4,000" class="bg-[#0a0a0a]">2,500 – 4,000</option>
-            <option value="4,000+" class="bg-[#0a0a0a]">4,000+</option>
-            <option value="Not sure" class="bg-[#0a0a0a]">Not sure</option>
-          </select>
-        </div>
-        <div>
-          <label for="floors" class="block text-sm text-gray-400 mb-1">Number of floors</label>
-          <select
-            name="floors"
-            id="floors"
-            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          >
-            <option value="" disabled selected class="bg-[#0a0a0a]">Select...</option>
-            <option value="1" class="bg-[#0a0a0a]">1</option>
-            <option value="2" class="bg-[#0a0a0a]">2</option>
-            <option value="3+" class="bg-[#0a0a0a]">3+</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Services of Interest -->
+      <!-- Message -->
       <div>
-        <span class="block text-sm text-gray-400 mb-3">Services of interest</span>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {[
-            'Structured Cabling',
-            'Wi-Fi Coverage',
-            'Network Segmentation',
-            'Camera System',
-            'Full Network Build',
-            'Not Sure',
-          ].map(service => (
-            <label class="flex items-center gap-2 text-sm text-gray-300 cursor-pointer">
-              <input type="checkbox" name="services" value={service} class="accent-accent rounded" />
-              {service}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <!-- What's not working -->
-      <div>
-        <label for="message" class="block text-sm text-gray-400 mb-1">What's not working? <span class="text-accent">*</span></label>
+        <label for="message" class="block text-sm text-gray-400 mb-1">What's going on with your network? <span class="text-accent">*</span></label>
         <textarea
           name="message"
           id="message"
           required
           rows="4"
           class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent resize-y"
-          placeholder="Describe your current network issues or what you'd like improved..."
+          placeholder="Dead zones, slow speeds, new build that needs wiring — whatever it is, just describe it here."
         ></textarea>
       </div>
-
-      <!-- Preferred Contact -->
-      <div>
-        <span class="block text-sm text-gray-400 mb-3">Preferred contact method</span>
-        <div class="flex gap-6">
-          {['Email', 'Phone', 'Either'].map(method => (
-            <label class="flex items-center gap-2 text-sm text-gray-300 cursor-pointer">
-              <input type="radio" name="preferred_contact" value={method} class="accent-accent" />
-              {method}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <!-- hCaptcha -->
-      <div class="h-captcha" data-captcha="true"></div>
 
       <!-- Submit -->
       <div class="pt-2">
@@ -190,11 +122,6 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]') as HTMLTextAreaElement | null;
-    if (hCaptcha && !hCaptcha.value) {
-      alert('Please complete the captcha.');
-      return;
-    }
 
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     btn.disabled = true;
