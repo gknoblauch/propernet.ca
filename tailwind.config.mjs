@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: '#38bdf8',
+        accent: '#2dd4bf',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['DM Sans', 'system-ui', 'sans-serif'],
       },
     },
   },

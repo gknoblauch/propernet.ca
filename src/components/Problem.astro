@@ -17,12 +17,12 @@ const problems = [
 
 <section id="problem" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">Why most home networks suck</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center font-heading">Why most home networks suck</h2>
     <p class="text-gray-400 text-center mb-16 max-w-xl mx-auto">It's not your fault — the default setup was never designed for how you actually use your network.</p>
     <div class="grid md:grid-cols-3 gap-8">
       {problems.map(p => (
         <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8">
-          <h3 class="text-xl font-semibold text-white mb-3">{p.title}</h3>
+          <h3 class="text-xl font-semibold text-white mb-3 font-heading">{p.title}</h3>
           <p class="text-gray-400 leading-relaxed">{p.description}</p>
         </div>
       ))}

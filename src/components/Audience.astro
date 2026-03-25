@@ -17,11 +17,11 @@ const audiences = [
 
 <section id="audience" class="py-24 px-6 bg-white/[0.02]">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center">Who This Is For</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center font-heading">Who This Is For</h2>
     <div class="grid md:grid-cols-3 gap-8">
       {audiences.map(a => (
         <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8">
-          <h3 class="text-xl font-semibold text-white mb-6">{a.title}</h3>
+          <h3 class="text-xl font-semibold text-white mb-6 font-heading">{a.title}</h3>
           <ul class="space-y-3">
             {a.items.map(item => (
               <li class="text-gray-400 flex items-start gap-2">

@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
-  <path d="M8 22V10l8 6-8 6z" fill="#38bdf8"/>
-  <rect x="18" y="10" width="6" height="12" rx="1" fill="#38bdf8"/>
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+  <!-- Bold P letterform -->
+  <path d="M7 7h9a5.5 5.5 0 0 1 0 11H11v7H7V7z" fill="#2dd4bf"/>
+  <path d="M11 10.5h5a2 2 0 0 1 0 4h-5v-4z" fill="#0f172a"/>
+  <!-- Wi-Fi arcs concentric with P bowl (center 16,12.5), bottom aligned to y=18 -->
+  <path d="M19.5 5.5 A8 8 0 0 1 24 18" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M20.5 3 A10.5 10.5 0 0 1 26.5 18" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M21.5 0.5 A13 13 0 0 1 29 18" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 </svg>
